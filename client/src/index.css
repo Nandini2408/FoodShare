@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@300;400;600&family=Lora:ital@1&display=swap');
+@import './styles/dark-mode.css';
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+:root {
+  --background: 0 0% 98%;
+  --foreground: 20 14.3% 20%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 20%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 20%;
+  
+  --primary: 142 60% 65%;
+  --primary-foreground: 0 0% 20%;
+  
+  --secondary: 32 95% 55%;
+  --secondary-foreground: 0 0% 100%;
+  
+  --accent: 210 100% 55%;
+  --accent-foreground: 0 0% 100%;
+  
+  --muted: 0 0% 92%;
+  --muted-foreground: 0 0% 45%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 142 60% 65%;
+  
+  --radius: 0.5rem;
+
+  /* Brand-specific colors */
+  --green-primary: 142 60% 65%;
+  --green-light: 142 60% 80%;
+  --green-dark: 142 60% 50%;
+  
+  --orange-primary: 32 95% 55%;
+  --orange-light: 32 95% 70%;
+  --orange-dark: 32 95% 45%;
+  
+  --blue-primary: 210 100% 55%;
+  --blue-light: 210 100% 70%;
+  --blue-dark: 210 100% 45%;
+  
+  --brown-primary: 20 23% 47%;
+  --brown-light: 18 19% 58%;
+  --brown-dark: 17 29% 34%;
+  
+  --yellow-primary: 45 100% 51%;
+  --yellow-light: 45 100% 66%;
+  --yellow-dark: 45 100% 41%;
+  
+  --neutral-white: 0 0% 96%;
+  --neutral-lightGray: 0 0% 88%;
+  --neutral-mediumGray: 0 0% 62%;
+  --neutral-charcoal: 0 0% 26%;
+
+  /* Chart colors */
+  --chart-1: 122 39% 49%;
+  --chart-2: 36 100% 50%;
+  --chart-3: 207 89% 61%;
+  --chart-4: 20 23% 47%;
+  --chart-5: 45 100% 51%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  
+  --primary: 122 39% 49%;
+  --primary-foreground: 0 0% 98%;
+  
+  --secondary: 36 100% 50%;
+  --secondary-foreground: 0 0% 98%;
+  
+  --accent: 207 89% 61%;
+  --accent-foreground: 0 0% 98%;
+  
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 122 39% 49%;
+}
+
+/* Tailwind layer for base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+  
+  .testimonial {
+    font-family: 'Lora', serif;
+    font-style: italic;
+  }
+}
+
+@layer components {
+  .shadow-soft {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-medium {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .rounded-soft {
+    border-radius: 8px;
+  }
+}
