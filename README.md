@@ -1,84 +1,102 @@
-# 🍽️ FoodConnect - Community Food Donation & Request Platform
+# FoodShare – Community Food Donation & Request Platform
 
-## 🌟 Overview
+## Overview
+FoodShare is a community-driven platform designed to reduce food waste and fight hunger by connecting people who have surplus food with those in need. The platform enables users to post food donations or requests, browse nearby offers and needs, claim or fulfill posts, and track pickups—all with a simple, intuitive interface and real-time status flows.
 
-FoodConnect is a powerful community-driven platform that bridges the gap between food surplus and scarcity. It enables neighbors to coordinate food donations and requests in real-time, reducing waste and fighting hunger simultaneously.
+## Scenario
+Surplus food often goes to waste while others go hungry. Neighbors struggle to coordinate pickups and donations in real time. FoodShare solves this by providing a community hub for food sharing and coordination.
 
-## 🎯 Mission
+## 🎯 Objective
+Build a community hub where users can:
+- Post food donations or requests
+- Browse nearby offers/needs
+- Claim or fulfill posts
+- Track pickups
+- Use simple mapping and status flows
 
-To create a sustainable ecosystem where surplus food finds its way to those who need it most, fostering community connections and reducing food waste.
-
-## ✨ Key Features
-
-- **📝 Post Donations & Requests**: Users can easily create posts to donate food or request meals
-- **🗺️ Interactive Map View**: Browse nearby offers and needs with an intuitive map interface
-- **⏱️ Real-time Status Tracking**: Follow posts from creation to completion with a clear timeline
-- **👥 Claim & Confirm Flow**: Simple process for claiming donations and confirming pickups
-- **🔔 Smart Notifications**: Stay informed with timely alerts about claims, approvals, and expiring posts
-- **⭐ Reputation System**: Build trust through ratings and reviews after successful exchanges
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **React**: Modern UI library for building interactive interfaces
-- **TypeScript**: Type-safe JavaScript for robust code
-- **TailwindCSS**: Utility-first CSS framework for responsive design
-- **Shadcn/UI**: Component library built on Radix UI primitives
-- **React Hook Form**: Form validation and handling
-- **Zod**: Schema validation
-- **Mapbox GL**: Interactive mapping capabilities
-- **Wouter**: Lightweight routing solution
-- **React Query**: Data fetching and state management
-
-### Backend
-- **Express.js**: Fast, unopinionated web framework for Node.js
-- **Drizzle ORM**: TypeScript ORM for SQL databases
-- **PostgreSQL (Neon)**: Serverless Postgres database
-- **Passport.js**: Authentication middleware
-- **Multer**: File upload handling
-- **WebSockets**: Real-time communication
-
-### Development & Deployment
-- **Vite**: Next-generation frontend tooling
-- **TypeScript**: End-to-end type safety
-- **ESBuild**: Fast JavaScript bundler
-
-## 🔄 Core Workflow
-
-1. **Post Creation**: Users create donation or request posts with details (description, quantity, location, expiry date)
-2. **Discovery**: Community members browse the feed or map to find relevant posts
-3. **Claiming**: Interested users claim posts they want to fulfill
-4. **Approval**: Post owners approve claims and coordinate pickups
-5. **Completion**: After successful exchange, users mark posts as completed
-6. **Rating**: Both parties can rate each other to build community trust
-
-## 📊 Data Model
-
-- **Users**: Account information, reputation metrics, and profile details
-- **Food Posts**: Donation/request details, status, location, and expiry information
-- **Claims**: Tracking who claimed what, with pickup arrangements
-- **Ratings**: User feedback system for building trust
-- **Notifications**: System for keeping users informed
-- **Messages**: In-app communication between users
+## 👥 User Role: user
+- All users can post donations or requests
+- Each post has an owner and a status flow
 
 ## 🔐 Authentication & Authorization
+- **Login required** to post or claim donations/requests
+- **Public browsing** of posts allowed without login
 
-- Login required to post or claim donations/requests
-- Public browsing allowed without login
-- Secure session management
+## 🧱 Core Functional Modules
+
+### 1. Post Donation / Request
+- Form includes:
+  - Type (Donate or Request)
+  - Description
+  - Quantity
+  - Pickup Location (text or map pin)
+  - Expiry Date
+
+### 2. Public Feed & Map View
+- List & map pins of all active posts
+- Filters:
+  - Type
+  - Expiry soon
+  - Distance (mocked)
+
+### 3. Claim & Confirm Flow
+- "Claim" button on donation posts
+- Owner approves claim → status moves Claimed → Picked Up
+
+### 4. Status Tracking
+- Timeline on each post:
+  - Posted → Claimed → Picked Up → Completed
+- Auto-expire after Expiry Date → Expired status
+
+### 5. Notifications
+- In-app/reminders when your claim is approved
+- Warning near expiry: "Your request expires in 1 day"
+
+### 6. History & Reputation
+- User profile shows:
+  - Total donations made/received
+  - Ratings (1–5 stars) from claimers or donors
+  - Users can rate each other post-pickup
 
 ## 🚀 Getting Started
 
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Set up environment variables (see `.env.example`)
-4. Run database migrations: `npm run migrations:push`
-5. Start the development server: `npm run dev`
+1. **Clone the repository:**
+   ```bash
+   git clone <repo-url>
+   cd FoodConnect-main
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or for client/server separately
+   cd client && npm install
+   cd ../server && npm install
+   ```
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   # or run client and server separately as needed
+   ```
+4. **Open the app:**
+   - Visit [http://localhost:5001](http://localhost:5001) in your browser.
 
-## 💡 Contributing
+## 🛠️ Tech Stack
+- React (Frontend)
+- Node.js + Express (Backend)
+- TypeScript
+- React Query, Wouter, Lucide Icons, and more
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 📂 Project Structure
+- `client/` – Frontend React app
+- `server/` – Backend API
+- `shared/` – Shared types and schema
+- `uploads/` – Uploaded food images
+
+## 🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ## 📄 License
+[MIT](LICENSE)
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
+FoodShare – Building stronger, more caring communities through food sharing.
